@@ -7,10 +7,10 @@
 	import java.io.DataInput;
 	import java.io.DataOutput;
 	import java.io.IOException;
-
+	
 	public class LogBeanWritable implements Writable {
-
-	    private String activName;
+	
+	    private String activeName;
 	    private String sessionID;
 	    private long timeTag;
 	    private String ip;
@@ -20,20 +20,12 @@
 	    private String productID;
 	    private String orderID;
 	
-	    public String getUserID() {
-	        return userID;
+	    public String getActiveName() {
+	        return activeName;
 	    }
 	
-	    public void setUserID(String userID) {
-	        this.userID = userID;
-	    }
-	
-	    public String getActivName() {
-	        return activName;
-	    }
-	
-	    public void setActivName(String activName) {
-	        this.activName = activName;
+	    public void setActiveName(String activeName) {
+	        this.activeName = activeName;
 	    }
 	
 	    public String getSessionID() {
@@ -76,6 +68,14 @@
 	        this.reqUrl = reqUrl;
 	    }
 	
+	    public String getUserID() {
+	        return userID;
+	    }
+	
+	    public void setUserID(String userID) {
+	        this.userID = userID;
+	    }
+	
 	    public String getProductID() {
 	        return productID;
 	    }
@@ -93,7 +93,7 @@
 	    }
 	
 	    public void write(DataOutput out) throws IOException {
-	        WritableUtils.writeString(out, activName);
+	        WritableUtils.writeString(out, activeName);
 	        WritableUtils.writeString(out, sessionID);
 	        out.writeLong(timeTag);
 	        WritableUtils.writeString(out, ip);
@@ -105,7 +105,7 @@
 	    }
 	
 	    public void readFields(DataInput in) throws IOException {
-	        activName = WritableUtils.readString(in);
+	        activeName = WritableUtils.readString(in);
 	        sessionID = WritableUtils.readString(in);
 	        timeTag = in.readLong();
 	        ip = WritableUtils.readString(in);
@@ -117,7 +117,7 @@
 	
 	    public String asJsonString(){
 	        JSONObject json = new JSONObject();
-	        json.put("active_name",activName);
+	        json.put("active_name",activeName);
 	        json.put("session_id",sessionID);
 	        json.put("time_tag",timeTag);
 	        json.put("ip",ip);
