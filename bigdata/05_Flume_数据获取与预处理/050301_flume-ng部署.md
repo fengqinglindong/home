@@ -28,7 +28,7 @@ flume的下载网站：
 			- flume启动命令
 				- ./bin/flume-ng agent --conf conf --conf-file conf/flume-conf.properties --name agent
 			- 查看日志文件
-				- sudo -iu hadop
+				- sudo -iu hadoop
 				- cd LIMIN/flume/logs
 				- less flume.log
 		* lib

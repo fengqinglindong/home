@@ -1,9 +1,10 @@
 ## Flume Agent
-![Flume_Agent_结构图](./050201_Flume_Agent_结构图.png)  
+
+![](https://i.imgur.com/FwMuGFZ.png)
 	
 	Agent由source、channel、sink三个组件组成。
 		* source：从数据发送端接收数据，并将接受到的数据以Flume的event格式传递给一个或多个通道channel。Flume提供多种数据的接收方式，比如Taildir（服务器上的监听文件），Kafka等。
-		* channel是一种短暂的存储容器，它将从source出接收到的event格式的数据缓存起来，知道被sink消费掉。支持类型用：File Channel，Memory Channel等。
+		* channel是一种短暂的存储容器，它将从source处接收到的event格式的数据缓存起来，直到被sink消费掉。支持类型有：File Channel，Memory Channel等。
 		* sink：是持久化组件，将数据保存到极致存储器，它从channel消费数据并将其传递给目标地。目标地：Hive，HDFS，Hbase等。
 
 	Flume Agent工作流程：
