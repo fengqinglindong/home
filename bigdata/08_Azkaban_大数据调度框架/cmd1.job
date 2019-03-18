@@ -1,2 +1,4 @@
 type=command
 command=/home/hadoop/hadoop-current/bin/hadoop jar etl-1.0-SNAPSHOT-jar-with-dependencies.jar com.bigdata.etl.job.ParseLogJob /user/11705048/input /user/11705048/output
+
+
